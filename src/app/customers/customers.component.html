@@ -1,0 +1,12 @@
+
+
+<div class="container">
+    <div class="card" *ngFor = "let customer of customerList" style="width: 18rem;">
+        <img [src]='customer.imgUrl' class="card-img-top" alt="...">
+        <p class="card-text">Name:{{customer.name}}</p>
+        <p class="card-text">Age:{{customer.age}}</p>
+        <p class="card-text">Id:{{customer.id}}</p>
+        <p class="card-text" id="cust-years">Years:<span class="orange" *ngIf = "customer.years > 2; else elseBlock">{{customer.years}}</span> <ng-template #elseBlock>{{customer.years}}</ng-template></p>
+        
+    </div>
+</div>

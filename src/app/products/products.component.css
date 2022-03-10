@@ -1,0 +1,32 @@
+body{
+    width: 100vw;
+    height: auto;
+    display: flex;
+
+}
+.container{
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.card{
+
+    height: 30rem;
+    border-radius: 5%;
+    background-color: silver;
+}
+
+.card img{
+    width: 15vw;
+    height: 20vh;
+}
+.red{
+    color: red;
+}
+.btn {
+    background-color: orangered;
+    position: relative;
+    bottom: 0;
+}

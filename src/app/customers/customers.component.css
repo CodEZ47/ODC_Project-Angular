@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color:azure;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: none;
+    
+}
+
+.card-text{
+    font-size: 3vh;
+    font-family:cursive;
+}
+
+.card img{
+    
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border-radius: 50%;
+}
+.orange{
+    color: orangered;
+}

@@ -1,0 +1,29 @@
+<div class ="container">
+        
+    <div class="mini-cont">
+        <div class="card"  style="width: 18rem;">
+            <img [src]='selectedProduct.imageUrl' class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{selectedProduct.name | uppercase}}</h5>
+                <p class="card-text">{{selectedProduct.description}}</p>
+                <p class="card-text">{{selectedProduct.price}} Br<span *ngIf = "selectedProduct.price < 10">(*On Discount)</span></p>
+                
+
+                <button class="btn btn-primary">View Detail</button>
+            </div>
+        </div>
+
+        <form (ngSubmit) = 'updateProduct()'> 
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name Change</label>
+                <input type="text" class="form-control" aria-describedby="nameHelp" name = "name" [(ngModel)]="newProduct.name" [placeholder]="selectedProduct.name">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail2" class="form-label">Price Change</label>
+                <input type="number" class="form-control" aria-describedby="priceHelp" name = "price" [(ngModel)]="newProduct.price" [placeholder]="selectedProduct.price">
+            </div>
+            <button type="submit" class="btn btn-primary" >Submit</button>
+        </form>
+    </div>
+</div>
