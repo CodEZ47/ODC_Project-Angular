@@ -1,0 +1,43 @@
+
+
+<div class="main-cont">
+    <div class="container">
+        <div class="card" style="width: 18rem;">
+            <img [src]='selectedCust.imgUrl' class="card-img-top" alt="...">
+            <p class="card-text">Name:{{selectedCust.name}}</p>
+            <p class="card-text">Age:{{selectedCust.age}}</p>
+            <p class="card-text">Id:{{selectedCust.id}}</p>
+            <p class="card-text" id="cust-years">Years:<span class="orange" *ngIf = "selectedCust.years > 2; else elseBlock">{{selectedCust.years}}</span> <ng-template #elseBlock>{{selectedCust.years}}</ng-template></p>
+            <button (click) = 'deleteCustomer()'>Delete</button>
+        </div>
+    </div>
+
+    <form #f = "ngForm" (ngSubmit) = 'updateCustomer()'> 
+        <div class="col">
+
+            <input type="text" class="form-control" placeholder="First name" aria-label="First name" name = "name" [(ngModel)] = 'newCust.name' required #name="ngModel">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                <div *ngIf="name.errors?.['required']">
+                    Name is required.
+                </div>
+            </div>  
+            <input type="number" class="form-control" aria-label="Last name" name = "age" [(ngModel)] = 'newCust.age' required>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                <div *ngIf="name.errors?.['required']">
+                    Age is required.
+                </div>
+            </div>  
+            <input type="number" class="form-control" aria-label="Last name" name = "years" [(ngModel)] = 'newCust.years' required>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                <div *ngIf="name.errors?.['required']">
+                    Years is required.
+                </div>
+            </div>  
+            
+            
+            <button type="submit" class="form-control" [disabled] = "!f.valid">Submit</button>
+            
+        </div>
+    </form>
+
+</div>
